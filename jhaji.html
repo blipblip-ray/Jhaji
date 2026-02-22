@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>झा जी समोसे वाला | Jha Ji Samose Wala</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Yatra+One&family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --saffron: #E8722A;
+  --saffron-deep: #C55A1B;
+  --turmeric: #F2B830;
+  --turmeric-light: #FFF3D0;
+  --cream: #FFF8EE;
+  --cream-dark: #F5EBD8;
+  --maroon: #8B1A1A;
+  --maroon-deep: #5C1010;
+  --green-leaf: #2D6A2E;
+  --green-light: #E8F5E9;
+  --earth: #6B4226;
+  --earth-light: #A67C52;
+  --text-dark: #2C1810;
+  --text-mid: #5A3D2E;
+  --white: #FFFFFF;
+  --border-pattern: #D4A76A;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ══════════════ MADHUBANI BORDER PATTERN (SVG) ══════════════ */
+.madhubani-border {
+  width: 100%;
+  height: 28px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--saffron) 0px, var(--saffron) 8px,
+    var(--turmeric) 8px, var(--turmeric) 16px,
+    var(--maroon) 16px, var(--maroon) 24px,
+    var(--green-leaf) 24px, var(--green-leaf) 32px
+  );
+  position: relative;
+}
+.madhubani-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--maroon) 0px, var(--maroon) 4px,
+    transparent 4px, transparent 8px
+  );
+}
+
+/* ══════════════ HERO / HEADER ══════════════ */
+.hero {
+  background: linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 40%, var(--saffron-deep) 100%);
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 50%, rgba(242, 184, 48, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(232, 114, 42, 0.2) 0%, transparent 40%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 15 L30 25 L25 15Z' fill='none' stroke='rgba(255,243,208,0.06)' stroke-width='1'/%3E%3Ccircle cx='30' cy='30' r='8' fill='none' stroke='rgba(255,243,208,0.04)' stroke-width='1'/%3E%3Cpath d='M15 45 Q30 35 45 45' fill='none' stroke='rgba(255,243,208,0.05)' stroke-width='1'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 50px 20px 40px;
+}
+
+/* Decorative mandala ring */
+.mandala-ring {
+  width: 160px; height: 160px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  border: 3px solid var(--turmeric);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: radial-gradient(circle, rgba(242,184,48,0.1), transparent 70%);
+  animation: mandalaGlow 4s ease-in-out infinite;
+}
+.mandala-ring::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(242,184,48,0.4);
+  animation: spinSlow 30s linear infinite;
+}
+.mandala-ring::after {
+  content: '';
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  border: 1px dotted rgba(255,243,208,0.2);
+  animation: spinSlow 45s linear infinite reverse;
+}
+
+@keyframes mandalaGlow {
+  0%, 100% { box-shadow: 0 0 30px rgba(242,184,48,0.2); }
+  50% { box-shadow: 0 0 50px rgba(242,184,48,0.35); }
+}
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+
+.logo-text {
+  font-family: 'Yatra One', cursive;
+  font-size: 2rem;
+  color: var(--turmeric);
+  line-height: 1.1;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+}
+.logo-text .hindi { font-size: 1.6rem; display: block; margin-bottom: 2px; }
+
+.hero h1 {
+  font-family: 'Yatra One', cursive;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--turmeric);
+  margin-bottom: 8px;
+  text-shadow: 0 3px 20px rgba(0,0,0,0.3);
+  letter-spacing: 2px;
+}
+.hero h1 .devanagari {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 0.75em;
+  display: block;
+  color: var(--turmeric-light);
+  letter-spacing: 4px;
+  margin-bottom: 4px;
+}
+
+.hero-tagline {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 1.15rem;
+  color: rgba(255,243,208,0.8);
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.hero-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.hero-detail {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(242,184,48,0.2);
+  border-radius: 12px;
+  padding: 12px 20px;
+  color: var(--turmeric-light);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+.hero-detail:hover {
+  background: rgba(255,255,255,0.14);
+  border-color: var(--turmeric);
+}
+.hero-detail svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+.free-delivery-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--green-leaf), #1B8A1B);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 20px;
+  animation: badgePulse 2s ease-in-out infinite;
+  box-shadow: 0 4px 20px rgba(45,106,46,0.4);
+}
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* ══════════════ NAV CATEGORIES ══════════════ */
+.category-nav {
+  background: var(--white);
+  border-bottom: 2px solid var(--cream-dark);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+.category-nav-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  gap: 6px;
+  padding: 12px 16px 6px;
+  justify-content: center;
+}
+/* Aesthetic thin scrollbar */
+.category-nav-inner::-webkit-scrollbar { height: 5px; }
+.category-nav-inner::-webkit-scrollbar-track {
+  background: var(--cream-dark);
+  border-radius: 10px;
+  margin: 0 60px;
+}
+.category-nav-inner::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--saffron), var(--turmeric));
+  border-radius: 10px;
+}
+.category-nav-inner::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, var(--saffron-deep), var(--saffron));
+}
+/* Firefox scrollbar */
+.category-nav-inner {
+  scrollbar-width: thin;
+  scrollbar-color: var(--saffron) var(--cream-dark);
+}
+
+.cat-pill {
+  flex-shrink: 0;
+  padding: 8px 18px;
+  border-radius: 24px;
+  border: 1.5px solid var(--cream-dark);
+  background: transparent;
+  color: var(--text-mid);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+.cat-pill:hover { border-color: var(--saffron); color: var(--saffron); }
+.cat-pill.active {
+  background: var(--saffron);
+  color: white;
+  border-color: var(--saffron);
+}
+
+/* ══════════════ MAIN CONTENT ══════════════ */
+.main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 16px 120px;
+}
+
+/* ══════════════ MENU SECTIONS ══════════════ */
+.menu-section {
+  margin-bottom: 40px;
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border-pattern);
+  position: relative;
+}
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 60px; height: 2px;
+  background: var(--saffron);
+}
+
+.section-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: 'Yatra One', cursive;
+  font-size: 1.5rem;
+  color: var(--maroon);
+  line-height: 1.2;
+}
+.section-title .hindi-sub {
+  display: block;
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 0.7em;
+  color: var(--earth-light);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* ══════════════ MENU ITEMS GRID ══════════════ */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: all 0.25s;
+  cursor: default;
+  gap: 10px;
+}
+.menu-item:hover {
+  border-color: var(--saffron);
+  box-shadow: 0 2px 12px rgba(232,114,42,0.1);
+  transform: translateY(-1px);
+}
+
+.item-info {
+  flex: 1;
+  min-width: 0;
+}
+.item-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+.item-name-hindi {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 0.78rem;
+  color: var(--earth-light);
+}
+
+.item-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.item-price {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--maroon);
+  white-space: nowrap;
+}
+
+.add-btn {
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  border: 1.5px solid var(--green-leaf);
+  background: var(--green-light);
+  color: var(--green-leaf);
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.add-btn:hover {
+  background: var(--green-leaf);
+  color: white;
+  transform: scale(1.1);
+}
+.add-btn.added {
+  background: var(--green-leaf);
+  color: white;
+}
+
+/* Quantity controls */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1.5px solid var(--green-leaf);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--white);
+}
+.qty-btn {
+  width: 30px; height: 32px;
+  border: none;
+  background: var(--green-leaf);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.qty-btn:hover { background: #1B5E1B; }
+.qty-value {
+  width: 28px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--green-leaf);
+}
+
+/* ══════════════ VEG BADGE ══════════════ */
+.veg-badge {
+  width: 16px; height: 16px;
+  border: 1.5px solid var(--green-leaf);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.veg-badge::after {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--green-leaf);
+}
+
+/* ══════════════ CART BAR ══════════════ */
+.cart-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--maroon-deep);
+  color: white;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 200;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 -4px 30px rgba(0,0,0,0.2);
+}
+.cart-bar.visible { transform: translateY(0); }
+
+.cart-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cart-count-badge {
+  background: var(--turmeric);
+  color: var(--maroon-deep);
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+.cart-summary { font-size: 0.9rem; }
+.cart-summary strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+}
+
+.cart-order-btn {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s;
+  box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+}
+.cart-order-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(37,211,102,0.45);
+}
+.cart-order-btn svg { width: 20px; height: 20px; }
+
+/* ══════════════ CART DRAWER ══════════════ */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(44,24,16,0.5);
+  z-index: 300;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.cart-overlay.open { opacity: 1; pointer-events: all; }
+
+.cart-drawer {
+  position: fixed;
+  right: 0; top: 0; bottom: 0;
+  width: min(420px, 90vw);
+  background: var(--cream);
+  z-index: 301;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+.cart-drawer.open { transform: translateX(0); }
+
+.cart-drawer-header {
+  background: var(--maroon);
+  color: white;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart-drawer-header h2 {
+  font-family: 'Yatra One', cursive;
+  font-size: 1.3rem;
+}
+.cart-close {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  background: transparent;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.cart-close:hover { background: rgba(255,255,255,0.15); }
+
+.cart-items-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: var(--white);
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+.cart-item-info { flex: 1; }
+.cart-item-name { font-weight: 600; font-size: 0.9rem; }
+.cart-item-price { color: var(--maroon); font-weight: 700; font-size: 0.85rem; }
+.cart-item-total {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--maroon);
+  min-width: 50px;
+  text-align: right;
+}
+
+.cart-drawer-footer {
+  padding: 20px 24px;
+  background: var(--white);
+  border-top: 2px solid var(--cream-dark);
+}
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.cart-total-label {
+  font-family: 'Yatra One', cursive;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+.cart-total-amount {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--maroon);
+}
+.delivery-note {
+  font-size: 0.8rem;
+  color: var(--earth-light);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.whatsapp-order-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.25s;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+}
+.whatsapp-order-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(37,211,102,0.45);
+}
+.whatsapp-order-btn svg { width: 22px; height: 22px; }
+
+.empty-cart-msg {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--earth-light);
+}
+.empty-cart-msg .emoji { font-size: 3rem; margin-bottom: 12px; }
+.empty-cart-msg p { font-size: 1rem; }
+
+/* ══════════════ CUSTOMER FIELDS ══════════════ */
+.customer-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-top: 4px;
+}
+.field-group { display: flex; flex-direction: column; gap: 5px; }
+.field-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.field-label svg { color: var(--earth-light); flex-shrink: 0; }
+.field-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  background: var(--cream);
+  outline: none;
+  transition: all 0.25s;
+  resize: none;
+}
+.field-input:focus {
+  border-color: var(--saffron);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(232,114,42,0.08);
+}
+.field-input::placeholder { color: #BBA88A; }
+.field-input.error { border-color: #D32F2F; background: #FFF5F5; }
+.field-textarea { min-height: 56px; }
+.field-error {
+  color: #D32F2F;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  min-height: 20px;
+  margin-bottom: 4px;
+  transition: all 0.2s;
+}
+
+/* ══════════════ FOOTER ══════════════ */
+.site-footer {
+  background: var(--maroon-deep);
+  color: rgba(255,243,208,0.7);
+  text-align: center;
+  padding: 30px 20px 100px;
+}
+.footer-brand {
+  font-family: 'Yatra One', cursive;
+  font-size: 1.3rem;
+  color: var(--turmeric);
+  margin-bottom: 8px;
+}
+.footer-address { font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px; }
+.footer-phones { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 16px; }
+.footer-phone {
+  color: var(--turmeric-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border: 1px solid rgba(242,184,48,0.3);
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+.footer-phone:hover { background: rgba(242,184,48,0.1); border-color: var(--turmeric); }
+.footer-copy { font-size: 0.75rem; opacity: 0.5; margin-top: 12px; }
+
+/* ══════════════ RESPONSIVE ══════════════ */
+@media (max-width: 640px) {
+  .menu-grid { grid-template-columns: 1fr; }
+  .hero-content { padding: 35px 16px 30px; }
+  .mandala-ring { width: 120px; height: 120px; }
+  .logo-text { font-size: 1.5rem; }
+  .hero h1 { font-size: 1.8rem; }
+  .hero-details { flex-direction: column; align-items: center; }
+  .cart-bar { padding: 12px 16px; }
+  .cart-order-btn { padding: 10px 20px; font-size: 0.85rem; }
+  .section-title { font-size: 1.25rem; }
+}
+
+/* ══════════════ SEARCH BAR ══════════════ */
+.search-container {
+  max-width: 500px;
+  margin: 0 auto 30px;
+  position: relative;
+}
+.search-input {
+  width: 100%;
+  padding: 14px 20px 14px 48px;
+  border: 2px solid var(--cream-dark);
+  border-radius: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  background: var(--white);
+  color: var(--text-dark);
+  outline: none;
+  transition: all 0.25s;
+}
+.search-input:focus { border-color: var(--saffron); box-shadow: 0 0 0 4px rgba(232,114,42,0.1); }
+.search-input::placeholder { color: var(--earth-light); }
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--earth-light);
+  width: 20px; height: 20px;
+}
+
+/* ══════════════ SCROLL ANIMATIONS ══════════════ */
+.menu-section { opacity: 0; transform: translateY(20px); transition: all 0.5s ease-out; }
+.menu-section.visible { opacity: 1; transform: translateY(0); }
+
+/* ══════════════ Kolam-inspired decorative divider ══════════════ */
+.kolam-divider {
+  text-align: center;
+  margin: 10px 0 30px;
+  opacity: 0.3;
+  font-size: 1.2rem;
+  letter-spacing: 8px;
+  color: var(--border-pattern);
+}
+</style>
+</head>
+<body>
+
+<!-- Madhubani Top Border -->
+<div class="madhubani-border"></div>
+
+<!-- ═══════ HERO ═══════ -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="mandala-ring">
+      <div class="logo-text">
+        <span class="hindi">झा जी</span>
+        समोसे वाला
+      </div>
+    </div>
+
+    <h1>
+      <span class="devanagari">झा जी समोसे वाला</span>
+      JHA JI SAMOSE WALA
+    </h1>
+
+    <p class="hero-tagline">"बिहार का स्वाद, मुंबई की शान" — Taste of Bihar, Pride of Mumbai</p>
+
+    <div class="hero-details">
+      <a href="https://maps.app.goo.gl/bJxZ4M8U5GwWhV9c8" target="_blank" class="hero-detail" style="text-decoration:none;color:var(--turmeric-light)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Shop No.11, Dhruv Heights, Upper Govind Nagar, Malad East, 400097
+      </a>
+      <div class="hero-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        7261818193 / 7405868660 / 8540075392
+      </div>
+    </div>
+
+    <div class="free-delivery-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+      FREE HOME DELIVERY — Orders Above ₹200!
+    </div>
+  </div>
+</header>
+
+<div class="madhubani-border"></div>
+
+<!-- ═══════ CATEGORY NAV ═══════ -->
+<nav class="category-nav">
+  <div class="category-nav-inner" id="catNav">
+    <!-- Generated by JS -->
+  </div>
+</nav>
+
+<!-- ═══════ MAIN CONTENT ═══════ -->
+<main class="main-content" id="menuContainer">
+  <!-- Search -->
+  <div class="search-container">
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input type="text" class="search-input" id="searchInput" placeholder="Search menu... (e.g. samosa, paneer, maggi)">
+  </div>
+
+  <div class="kolam-divider">❋ ❊ ❋ ❊ ❋</div>
+
+  <!-- Menu sections injected by JS -->
+  <div id="menuSections"></div>
+</main>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer class="site-footer">
+  <div class="footer-brand">झा जी समोसे वाला</div>
+  <a href="https://maps.app.goo.gl/bJxZ4M8U5GwWhV9c8" target="_blank" class="footer-address" style="text-decoration:none;color:inherit">
+    📍 Shop No.11, Dhruv Heights, Upper Govind Nagar,<br>
+    Malad East, Mumbai — 400097
+  </a>
+  <div class="footer-phones">
+    <a href="tel:7261818193" class="footer-phone">☎ 7261818193</a>
+    <a href="tel:7405868660" class="footer-phone">☎ 7405868660</a>
+    <a href="tel:8540075392" class="footer-phone">☎ 8540075392</a>
+  </div>
+  <div class="footer-copy">© 2026 Jha Ji Samose Wala • Made with ❤️ in Mumbai</div>
+</footer>
+
+<!-- ═══════ CART BAR (sticky bottom) ═══════ -->
+<div class="cart-bar" id="cartBar">
+  <div class="cart-info" id="cartBarClick" style="cursor:pointer">
+    <div class="cart-count-badge" id="cartCountBadge">0</div>
+    <div class="cart-summary">
+      <span id="cartItemsText">0 items</span> •
+      <strong>₹<span id="cartTotalText">0</span></strong>
+    </div>
+  </div>
+  <button class="cart-order-btn" id="cartBarOrderBtn">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.585l-.386-.238-2.648.888.888-2.648-.238-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    Checkout →
+  </button>
+</div>
+
+<!-- ═══════ CART DRAWER ═══════ -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <h2>🛒 Your Order</h2>
+    <button class="cart-close" id="cartClose">✕</button>
+  </div>
+  <div class="cart-items-list" id="cartItemsList">
+    <!-- Generated by JS -->
+  </div>
+  <div class="cart-drawer-footer">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-amount">₹<span id="drawerTotal">0</span></span>
+    </div>
+    <div class="delivery-note" id="deliveryNote">Free delivery on orders above ₹200</div>
+
+    <div class="customer-fields">
+      <div class="field-group">
+        <label class="field-label" for="custName">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Your Name
+        </label>
+        <input type="text" id="custName" class="field-input" placeholder="e.g. Rahul Jha">
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="custPhone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 013.12 4.18 2 2 0 015.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Phone Number
+        </label>
+        <input type="tel" id="custPhone" class="field-input" placeholder="e.g. 9876543210">
+      </div>
+      <div class="field-group">
+        <label class="field-label" for="custAddress">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Delivery Address
+        </label>
+        <textarea id="custAddress" class="field-input field-textarea" rows="2" placeholder="Flat no., building, landmark, area..."></textarea>
+      </div>
+    </div>
+    <div class="field-error" id="fieldError"></div>
+
+    <button class="whatsapp-order-btn" id="whatsappOrderBtn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.585l-.386-.238-2.648.888.888-2.648-.238-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Send Order on WhatsApp
+    </button>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════
+// MENU DATA
+// ═══════════════════════════════════════
+const menuData = [
+  {
+    id: 'bihar',
+    title: 'Jiya Ho Bihar Ke Lala',
+    titleHindi: 'जिया हो बिहार के लाला',
+    icon: '🥟',
+    iconBg: '#FFF3D0',
+    items: [
+      { name: 'Bihari Samosa', hindi: 'बिहारी समोसा', price: 20 },
+      { name: 'Paneer Wale Bihari Samosa', hindi: 'पनीर वाले बिहारी समोसा', price: 28 },
+      { name: 'Bihari Kachori', hindi: 'बिहारी कचौरी', price: 20 },
+      { name: 'Bihari Samosa Chana Mar Ke', hindi: 'बिहारी समोसा चना मार के', price: 35 },
+      { name: 'Chole Samosa', hindi: 'छोले समोसा', price: 35 },
+      { name: 'Bihari Kachori Chana Mar Ke', hindi: 'बिहारी कचौरी चना मार के', price: 35 },
+      { name: 'Bread Pakoda', hindi: 'ब्रेड पकोड़ा', price: 60 },
+      { name: 'Palak Salad', hindi: 'पालक सलाद', price: 25 },
+      { name: 'Palak Patta Pakoda', hindi: 'पालक पत्ता पकोड़ा', price: 25 },
+      { name: 'Palak Patta Paneer Pakoda', hindi: 'पालक पत्ता पनीर पकोड़ा', price: 40 },
+      { name: 'Gobi Pakoda', hindi: 'गोभी पकोड़ा', price: 30 },
+      { name: 'Mirchi Pakoda', hindi: 'मिर्ची पकोड़ा', price: 30 },
+      { name: 'Aloo Chop', hindi: 'आलू चॉप', price: 30 },
+      { name: 'Chana Ghugni', hindi: 'चना घुगनी', price: 40 },
+      { name: 'Pyaz Kachori', hindi: 'प्याज़ कचौरी', price: 30 },
+    ]
+  },
+  {
+    id: 'punjab',
+    title: 'Taste of Punjab',
+    titleHindi: 'पंजाब का ज़ायका',
+    icon: '🍛',
+    iconBg: '#FFE8D6',
+    items: [
+      { name: 'Special Chole Bhature', hindi: 'स्पेशल छोले भटूरे', price: 120 },
+      { name: 'Spl Chole Bhature (Single)', hindi: 'छोले भटूरे (सिंगल)', price: 80 },
+      { name: 'Spl Paneer Wale Chole Bhature', hindi: 'पनीर वाले छोले भटूरे', price: 150 },
+      { name: 'Spl Paneer Wale Chole Bhature (1)', hindi: 'पनीर वाले छोले भटूरे (1)', price: 100 },
+      { name: 'Mix Kulcha', hindi: 'मिक्स कुलचा', price: 120 },
+      { name: 'Chhur Chhur Naan', hindi: 'छुर छुर नान', price: 120 },
+      { name: 'Puri Chole', hindi: 'पूरी छोले', price: 120 },
+      { name: 'Aloo Kulche & Chole', hindi: 'आलू कुलचे और छोले', price: 120 },
+      { name: 'Aloo Pyaz Kulche & Chole', hindi: 'आलू प्याज़ कुलचे और छोले', price: 160 },
+      { name: 'Paneer Kulche & Chole', hindi: 'पनीर कुलचे और छोले', price: 180 },
+      { name: 'Cheese Paneer Kulche & Chole', hindi: 'चीज़ पनीर कुलचे और छोले', price: 200 },
+      { name: 'Chole (500 gms)', hindi: 'छोले (500 ग्राम)', price: 100 },
+      { name: 'Chawal Chole', hindi: 'चावल छोले', price: 100 },
+      { name: 'Dal Fry', hindi: 'दाल फ्राई', price: 150 },
+      { name: 'Dal Tadka', hindi: 'दाल तड़का', price: 160 },
+      { name: 'Dal Makhni', hindi: 'दाल मखनी', price: 180 },
+      { name: 'Kadai Paneer', hindi: 'कड़ाई पनीर', price: 250 },
+      { name: 'Shahi Paneer', hindi: 'शाही पनीर', price: 230 },
+      { name: 'Tandoori Roti', hindi: 'तंदूरी रोटी', price: 15 },
+      { name: 'Butter Tandoori Roti', hindi: 'बटर तंदूरी रोटी', price: 20 },
+      { name: 'Missi Roti', hindi: 'मिस्सी रोटी', price: 25 },
+      { name: 'Plain Rice', hindi: 'प्लेन चावल', price: 70 },
+      { name: 'Jeera Rice', hindi: 'जीरा चावल', price: 90 },
+      { name: 'Veg Punjabi Thali', hindi: 'वेज पंजाबी थाली', price: 150 },
+    ]
+  },
+  {
+    id: 'chaat',
+    title: 'Chatori Chachi Ke Khazane Se',
+    titleHindi: 'चटोरी चाची के खज़ाने से',
+    icon: '😋',
+    iconBg: '#E8F5E9',
+    items: [
+      { name: 'Dahi Samosa', hindi: 'दही समोसा', price: 80 },
+      { name: 'Chana Samosa Chat', hindi: 'चना समोसा चाट', price: 80 },
+      { name: 'Dahi Kachori', hindi: 'दही कचौरी', price: 80 },
+      { name: 'Aloo Papdi Chat', hindi: 'आलू पापड़ी चाट', price: 90 },
+      { name: 'Moong Dal Pakoda Chat', hindi: 'मूंग दाल पकोड़ा चाट', price: 90 },
+      { name: 'Palak Pakode Chat', hindi: 'पालक पकोड़े चाट', price: 90 },
+    ]
+  },
+  {
+    id: 'mumbai',
+    title: 'Mumbai Ka Shana',
+    titleHindi: 'मुंबई का शाना',
+    icon: '🥙',
+    iconBg: '#FFF3E0',
+    items: [
+      { name: 'Vada Pav', hindi: 'वड़ा पाव', price: 20 },
+      { name: 'Samosa Pav', hindi: 'समोसा पाव', price: 25 },
+      { name: 'Bhaji Pav', hindi: 'भाजी पाव', price: 30 },
+      { name: 'Moong Dal Bhaji', hindi: 'मूंग दाल भाजी', price: 30 },
+      { name: 'Palak Bhaji', hindi: 'पालक भाजी', price: 30 },
+    ]
+  },
+  {
+    id: 'chinese',
+    title: 'Chinese',
+    titleHindi: 'चाइनीज़',
+    icon: '🥡',
+    iconBg: '#FCE4EC',
+    items: [
+      { name: 'Veg Manchow Soup', hindi: 'वेज मंचाऊ सूप', price: 120 },
+      { name: 'Veg Fried Rice', hindi: 'वेज फ्राइड राइस', price: 180 },
+      { name: 'Veg Schez. Rice', hindi: 'वेज शेज़वान राइस', price: 200 },
+      { name: 'Veg Triple Rice', hindi: 'वेज ट्रिपल राइस', price: 300 },
+      { name: 'Hakka Noodles', hindi: 'हक्का नूडल्स', price: 180 },
+      { name: 'Schez. Hakka Noodles', hindi: 'शेज़वान हक्का नूडल्स', price: 200 },
+      { name: 'Veg Triple Noodles', hindi: 'वेज ट्रिपल नूडल्स', price: 300 },
+      { name: 'Veg Manchurian Dry', hindi: 'वेज मंचूरियन ड्राई', price: 200 },
+      { name: 'Veg Manchurian Gravy', hindi: 'वेज मंचूरियन ग्रेवी', price: 200 },
+      { name: 'Paneer Chilly Dry', hindi: 'पनीर चिली ड्राई', price: 250 },
+      { name: 'Paneer Chilly Gravy', hindi: 'पनीर चिली ग्रेवी', price: 280 },
+    ]
+  },
+  {
+    id: 'bread',
+    title: 'Breaking Bread',
+    titleHindi: 'ब्रेकिंग ब्रेड',
+    icon: '🍞',
+    iconBg: '#FFF8E1',
+    items: [
+      { name: 'Corn Palak Toast', hindi: 'कॉर्न पालक टोस्ट', price: 120 },
+      { name: 'Masala Toast', hindi: 'मसाला टोस्ट', price: 80 },
+      { name: 'Cheese Masala Toast', hindi: 'चीज़ मसाला टोस्ट', price: 110 },
+      { name: 'Paneer Cheese Masala Toast', hindi: 'पनीर चीज़ मसाला टोस्ट', price: 130 },
+      { name: 'Palak Paneer Toast', hindi: 'पालक पनीर टोस्ट', price: 150 },
+      { name: 'Cheese Corn Palak Toast', hindi: 'चीज़ कॉर्न पालक टोस्ट', price: 150 },
+      { name: 'Paneer Cheese Loaded Toast', hindi: 'पनीर चीज़ लोडेड टोस्ट', price: 170 },
+    ]
+  },
+  {
+    id: 'healthy',
+    title: 'Kuch Healthy Ho Jaye',
+    titleHindi: 'कुछ हेल्दी हो जाए',
+    icon: '🥗',
+    iconBg: '#E8F5E9',
+    items: [
+      { name: 'Moong Chana Green Salad', hindi: 'मूंग चना ग्रीन सलाद', price: 70 },
+      { name: 'Corn Green Salad', hindi: 'कॉर्न ग्रीन सलाद', price: 70 },
+      { name: 'Palak Corn Salad', hindi: 'पालक कॉर्न सलाद', price: 80 },
+      { name: 'Butter Corn Salad', hindi: 'बटर कॉर्न सलाद', price: 80 },
+      { name: 'Butter Cheese Corn Salad', hindi: 'बटर चीज़ कॉर्न सलाद', price: 110 },
+      { name: 'Corn Chana Salad', hindi: 'कॉर्न चना सलाद', price: 80 },
+    ]
+  },
+  {
+    id: 'maggi',
+    title: 'Maggi & Pasta',
+    titleHindi: 'मैगी और पास्ता',
+    icon: '🍝',
+    iconBg: '#FFF3E0',
+    items: [
+      { name: 'Vegetable Maggi', hindi: 'वेजिटेबल मैगी', price: 60 },
+      { name: 'Butter Maggi', hindi: 'बटर मैगी', price: 60 },
+      { name: 'Cheese Butter Maggi', hindi: 'चीज़ बटर मैगी', price: 70 },
+      { name: 'Vegetable Butter Maggi', hindi: 'वेजिटेबल बटर मैगी', price: 70 },
+      { name: 'Ch. Vegetable Butter Maggi', hindi: 'चीज़ वेज बटर मैगी', price: 85 },
+      { name: 'Paneer Maggi', hindi: 'पनीर मैगी', price: 70 },
+      { name: 'Paneer Cheese Maggi', hindi: 'पनीर चीज़ मैगी', price: 85 },
+      { name: 'Special Maggi', hindi: 'स्पेशल मैगी', price: 70 },
+      { name: 'Indian Masala Pasta', hindi: 'इंडियन मसाला पास्ता', price: 120 },
+      { name: 'White Sauce Pasta', hindi: 'व्हाइट सॉस पास्ता', price: 180 },
+      { name: 'Special Exotic Pasta', hindi: 'स्पेशल एक्ज़ोटिक पास्ता', price: 250 },
+    ]
+  },
+  {
+    id: 'shakes',
+    title: 'Milk Shakes',
+    titleHindi: 'मिल्क शेक',
+    icon: '🥤',
+    iconBg: '#F3E5F5',
+    items: [
+      { name: 'Chocolate Milk Shake', hindi: 'चॉकलेट मिल्क शेक', price: 80 },
+      { name: 'Vanilla Milk Shake', hindi: 'वनीला मिल्क शेक', price: 80 },
+      { name: 'Badam Milk Shake', hindi: 'बादाम मिल्क शेक', price: 100 },
+      { name: 'Strawberry Milk Shake', hindi: 'स्ट्रॉबेरी मिल्क शेक', price: 100 },
+      { name: 'Choco Oreo Milk Shake', hindi: 'चोको ओरियो मिल्क शेक', price: 150 },
+      { name: 'Choco KitKat Milk Shake', hindi: 'चोको किटकैट मिल्क शेक', price: 150 },
+      { name: 'Nutella Milk Shake', hindi: 'नुटेला मिल्क शेक', price: 150 },
+      { name: 'Mango Milk Shake', hindi: 'मैंगो मिल्क शेक', price: 150 },
+    ]
+  },
+];
+
+// ═══════════════════════════════════════
+// CART STATE
+// ═══════════════════════════════════════
+let cart = {}; // { "itemName": { ...item, qty: N } }
+
+// ═══════════════════════════════════════
+// RENDER MENU
+// ═══════════════════════════════════════
+function renderMenu(filter = '') {
+  const container = document.getElementById('menuSections');
+  const filterLower = filter.toLowerCase();
+
+  let html = '';
+  menuData.forEach((section, sIdx) => {
+    const filteredItems = filter
+      ? section.items.filter(item =>
+          item.name.toLowerCase().includes(filterLower) ||
+          item.hindi.includes(filter)
+        )
+      : section.items;
+
+    if (filteredItems.length === 0) return;
+
+    html += `
+      <section class="menu-section" id="section-${section.id}" data-section="${sIdx}">
+        <div class="section-header">
+          <div class="section-icon" style="background:${section.iconBg}">${section.icon}</div>
+          <div>
+            <div class="section-title">
+              ${section.title}
+              <span class="hindi-sub">${section.titleHindi}</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-grid">
+          ${filteredItems.map(item => renderMenuItem(item)).join('')}
+        </div>
+      </section>
+    `;
+  });
+
+  if (!html) {
+    html = `<div style="text-align:center;padding:60px 20px;color:var(--earth-light)">
+      <div style="font-size:3rem;margin-bottom:12px">🔍</div>
+      <p>No items found for "${filter}"</p>
+    </div>`;
+  }
+
+  container.innerHTML = html;
+
+  // Animate sections in
+  setTimeout(() => {
+    document.querySelectorAll('.menu-section').forEach((sec, i) => {
+      setTimeout(() => sec.classList.add('visible'), i * 80);
+    });
+  }, 50);
+}
+
+function renderMenuItem(item) {
+  const inCart = cart[item.name];
+  const qty = inCart ? inCart.qty : 0;
+
+  return `
+    <div class="menu-item">
+      <div class="veg-badge"></div>
+      <div class="item-info">
+        <div class="item-name">${item.name}</div>
+        <div class="item-name-hindi">${item.hindi}</div>
+      </div>
+      <div class="item-right">
+        <span class="item-price">₹${item.price}</span>
+        ${qty > 0 ? `
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="updateQty('${item.name.replace(/'/g, "\\'")}', -1)">−</button>
+            <span class="qty-value">${qty}</span>
+            <button class="qty-btn" onclick="updateQty('${item.name.replace(/'/g, "\\'")}', 1)">+</button>
+          </div>
+        ` : `
+          <button class="add-btn" onclick="addToCart('${item.name.replace(/'/g, "\\'")}', ${item.price}, '${item.hindi}')">+</button>
+        `}
+      </div>
+    </div>
+  `;
+}
+
+// ═══════════════════════════════════════
+// CART FUNCTIONS
+// ═══════════════════════════════════════
+function addToCart(name, price, hindi) {
+  if (cart[name]) {
+    cart[name].qty++;
+  } else {
+    cart[name] = { name, price, hindi, qty: 1 };
+  }
+  updateUI();
+}
+
+function updateQty(name, delta) {
+  if (!cart[name]) return;
+  cart[name].qty += delta;
+  if (cart[name].qty <= 0) delete cart[name];
+  updateUI();
+}
+
+function getCartTotal() {
+  return Object.values(cart).reduce((sum, item) => sum + item.price * item.qty, 0);
+}
+
+function getCartCount() {
+  return Object.values(cart).reduce((sum, item) => sum + item.qty, 0);
+}
+
+function updateUI() {
+  const total = getCartTotal();
+  const count = getCartCount();
+
+  // Update cart bar
+  const cartBar = document.getElementById('cartBar');
+  if (count > 0) {
+    cartBar.classList.add('visible');
+  } else {
+    cartBar.classList.remove('visible');
+  }
+
+  document.getElementById('cartCountBadge').textContent = count;
+  document.getElementById('cartItemsText').textContent = `${count} item${count !== 1 ? 's' : ''}`;
+  document.getElementById('cartTotalText').textContent = total;
+  document.getElementById('drawerTotal').textContent = total;
+
+  // Delivery note
+  const note = document.getElementById('deliveryNote');
+  if (total >= 200) {
+    note.textContent = '✅ Free delivery eligible!';
+    note.style.color = 'var(--green-leaf)';
+    note.style.fontWeight = '600';
+  } else {
+    note.textContent = `Add ₹${200 - total} more for free delivery`;
+    note.style.color = 'var(--earth-light)';
+    note.style.fontWeight = '400';
+  }
+
+  // Re-render menu to update buttons
+  renderMenu(document.getElementById('searchInput').value);
+
+  // Update cart drawer
+  renderCartDrawer();
+}
+
+function renderCartDrawer() {
+  const list = document.getElementById('cartItemsList');
+  const items = Object.values(cart);
+
+  if (items.length === 0) {
+    list.innerHTML = `<div class="empty-cart-msg">
+      <div class="emoji">🛒</div>
+      <p>Your cart is empty<br><small style="color:var(--earth-light)">Add some delicious items!</small></p>
+    </div>`;
+    return;
+  }
+
+  list.innerHTML = items.map(item => `
+    <div class="cart-item">
+      <div class="veg-badge"></div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">₹${item.price} each</div>
+      </div>
+      <div class="qty-controls">
+        <button class="qty-btn" onclick="updateQty('${item.name.replace(/'/g, "\\'")}', -1)">−</button>
+        <span class="qty-value">${item.qty}</span>
+        <button class="qty-btn" onclick="updateQty('${item.name.replace(/'/g, "\\'")}', 1)">+</button>
+      </div>
+      <div class="cart-item-total">₹${item.price * item.qty}</div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════
+// CART DRAWER TOGGLE
+// ═══════════════════════════════════════
+function openDrawer() {
+  document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartDrawer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  renderCartDrawer();
+}
+
+function closeDrawer() {
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('cartBarClick').addEventListener('click', openDrawer);
+document.getElementById('cartClose').addEventListener('click', closeDrawer);
+document.getElementById('cartOverlay').addEventListener('click', closeDrawer);
+
+// ═══════════════════════════════════════
+// WHATSAPP ORDER
+// ═══════════════════════════════════════
+function sendWhatsAppOrder() {
+  const items = Object.values(cart);
+  if (items.length === 0) return;
+
+  // Get customer details
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  const address = document.getElementById('custAddress').value.trim();
+  const errorEl = document.getElementById('fieldError');
+
+  // Clear previous errors
+  document.querySelectorAll('.field-input').forEach(f => f.classList.remove('error'));
+  errorEl.textContent = '';
+
+  // Validate
+  const missing = [];
+  if (!name) { missing.push('Name'); document.getElementById('custName').classList.add('error'); }
+  if (!phone) { missing.push('Phone'); document.getElementById('custPhone').classList.add('error'); }
+  if (!address) { missing.push('Address'); document.getElementById('custAddress').classList.add('error'); }
+
+  if (missing.length) {
+    errorEl.textContent = `⚠ Please fill: ${missing.join(', ')}`;
+    // Shake animation
+    errorEl.style.animation = 'none';
+    errorEl.offsetHeight; // reflow
+    errorEl.style.animation = 'shake 0.4s ease';
+    return;
+  }
+
+  // Phone validation (basic Indian number check)
+  if (!/^[6-9]\d{9}$/.test(phone.replace(/\s/g, ''))) {
+    errorEl.textContent = '⚠ Please enter a valid 10-digit phone number';
+    document.getElementById('custPhone').classList.add('error');
+    return;
+  }
+
+  const total = getCartTotal();
+  let msg = `🙏 *Jha Ji Samose Wala — New Order*\n`;
+  msg += `━━━━━━━━━━━━━━━━━━━\n\n`;
+  msg += `👤 *Customer:* ${name}\n`;
+  msg += `📞 *Phone:* ${phone}\n`;
+  msg += `📍 *Delivery Address:*\n${address}\n\n`;
+  msg += `━━━━━━━━━━━━━━━━━━━\n`;
+  msg += `📋 *Order Details:*\n\n`;
+  items.forEach((item, i) => {
+    msg += `${i + 1}. ${item.name}\n`;
+    msg += `   ${item.qty} × ₹${item.price} = *₹${item.price * item.qty}*\n`;
+  });
+  msg += `\n━━━━━━━━━━━━━━━━━━━\n`;
+  msg += `💰 *Grand Total: ₹${total}*\n`;
+  if (total >= 200) msg += `🚚 *FREE Home Delivery ✅*\n`;
+  else msg += `🚚 Delivery charges may apply (order ₹${200 - total} more for free delivery)\n`;
+  msg += `━━━━━━━━━━━━━━━━━━━\n\n`;
+  msg += `🙏 Dhanyavaad! Please confirm the order.`;
+
+  const encoded = encodeURIComponent(msg);
+  const storePhone = '917261818193';
+  window.open(`https://wa.me/${storePhone}?text=${encoded}`, '_blank');
+}
+
+document.getElementById('cartBarOrderBtn').addEventListener('click', () => { openDrawer(); });
+document.getElementById('whatsappOrderBtn').addEventListener('click', sendWhatsAppOrder);
+
+// Clear field errors on input
+['custName', 'custPhone', 'custAddress'].forEach(id => {
+  document.getElementById(id).addEventListener('input', function() {
+    this.classList.remove('error');
+    document.getElementById('fieldError').textContent = '';
+  });
+});
+
+// ═══════════════════════════════════════
+// CATEGORY NAV
+// ═══════════════════════════════════════
+function renderCatNav() {
+  const nav = document.getElementById('catNav');
+  nav.innerHTML = menuData.map((section, i) => `
+    <button class="cat-pill ${i === 0 ? 'active' : ''}" data-section="${section.id}">
+      ${section.icon} ${section.title}
+    </button>
+  `).join('');
+
+  nav.querySelectorAll('.cat-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Clear search
+      document.getElementById('searchInput').value = '';
+      renderMenu();
+
+      nav.querySelectorAll('.cat-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Wait for DOM to update after renderMenu, then scroll
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          // Make all sections visible immediately when using nav
+          document.querySelectorAll('.menu-section').forEach(sec => sec.classList.add('visible'));
+
+          const target = document.getElementById(`section-${btn.dataset.section}`);
+          if (target) {
+            const navHeight = document.querySelector('.category-nav').offsetHeight;
+            const y = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        });
+      });
+    });
+  });
+}
+
+// ═══════════════════════════════════════
+// SEARCH
+// ═══════════════════════════════════════
+let searchTimeout;
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => renderMenu(e.target.value), 200);
+});
+
+// ═══════════════════════════════════════
+// SCROLL SPY for nav pills
+// ═══════════════════════════════════════
+function updateActiveNav() {
+  const navHeight = document.querySelector('.category-nav')?.offsetHeight || 60;
+  const sections = document.querySelectorAll('.menu-section');
+  let activeId = null;
+
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top <= navHeight + 40) {
+      activeId = sec.id.replace('section-', '');
+    }
+  });
+
+  if (activeId) {
+    document.querySelectorAll('.cat-pill').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.section === activeId);
+      if (btn.dataset.section === activeId) {
+        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
+  }
+}
+
+window.addEventListener('scroll', () => {
+  requestAnimationFrame(updateActiveNav);
+});
+
+// ═══════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════
+renderCatNav();
+renderMenu();
+</script>
+
+</body>
+</html>
